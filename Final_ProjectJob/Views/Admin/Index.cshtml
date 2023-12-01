@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Final_ProjectJob.Jobs>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<div class="main_container">
+    <div style="background-image: url('../Images/bg.jpg'); width: 100%; height: 720px; background-repeat:no-repeat; background-size: cover; background-attachment: fixed;">
+        <div class="container pt-4 pb-4">
+            <div>
+                <h3 class="text-center">Add List/Details</h3>
+            </div>
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JobId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NoOfPost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Qualification)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Experience)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JobType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Country)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.State)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Salary)
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JobId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NoOfPost)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Qualification)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Experience)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.JobType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.State)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Salary)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.JobId })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.JobId })
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
